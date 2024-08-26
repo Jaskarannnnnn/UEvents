@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEvents-Homepage</title>
+    
+
+</head>
+<body>
+    <style>
+       
+body {
+    background-color: white;
+}
+.gallery{
+    width: 1800px;
+    display: flex;
+    margin-left: 50px;
+    overflow-x: scroll;
+}
+.gallery div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    padding: 50px;
+    flex: none;
+    
+}
+.gallery div img{
+    width: 250px;
+    filter: grayscale(1);
+    transition: 0.2s;
+    
+}
+.gallery div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.2)
+    
+
+    
+}
+.gallery::-webkit-scrollbar{
+    display: none;
+}
+.gallerywrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+    margin-left: 140px;
+}
+#backbuttn, #nextbuttn{
+    cursor: pointer;
+    width: 50px;
+    margin: 40px;
+}
+
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75px; 
+    height: 100vh;
+    background-color:rgb(158, 2, 2);
+    padding: 20px;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
+    margin: 0;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.text1 {
+
+  width: 115px;
+  margin-left: -20px;
+  margin-top: 170px;
+}
+
+.text {
+
+    width: 115px;
+    margin-left: -20px;
+}
+
+.text a:hover{
+    background-color: rgb(87, 5, 5);
+}
+
+.text1 a:hover{
+    background-color: rgb(87, 5, 5);
+    
+}
+main {
+    margin-left: 50px;
+}
+.name{
+    text-align: center;
+    margin-left: 80px;
+    display: flex;
+    position: absolute;
+    margin-bottom:600px;
+    
+}
+
+    </style>
+    <nav class="nav-bar">
+        <ul>
+            <div class="text"><li class="write"><a href="">Home</a></li></div>
+            <div class="text"><li class="write"><a href="#">About</a></li></div>
+            <div class="text"><li class="write"><a href="#">Contact</a></li></div>
+            <div class="text"><li class="write"><a href="#">Services</a></li></div>
+        </ul>
+    </nav>
+    
+    <div class="gallerywrap">
+        <h1 class="name">Top Events This Week</h1>
+        <img src="https://i.ibb.co/GpDqZkt/back.png" id="backbuttn">
+        <div class="gallery">
+            <div>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+    
+            </div>
+            <div>
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+      
+              </div>
+        
+        
+        </div>
+
+    
+        <img src="https://i.ibb.co/TMLDpF0/next.png" id="nextbuttn">
+    </div>
+
+    
+    <div class="gallerywrap">
+        <h1 class="name">Top Technical Events</h1>
+        <img src="https://i.ibb.co/GpDqZkt/back.png" id="backbuttn">
+        <div class="gallery">
+            <div>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+    
+            </div>
+            <div>
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+      
+              </div>
+        
+        
+        </div>
+
+    
+        <img src="https://i.ibb.co/TMLDpF0/next.png" id="nextbuttn">
+    </div>
+    <div class="gallerywrap">
+        <h1 class="name">Experts Talk</h1>
+        <img src="https://i.ibb.co/GpDqZkt/back.png" id="backbuttn">
+        <div class="gallery">
+            <div>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+    
+            </div>
+            <div>
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+      
+              </div>
+        
+        
+        </div>
+
+    
+        <img src="https://i.ibb.co/TMLDpF0/next.png" id="nextbuttn">
+    </div>
+    
+</body>
+<script>
+    let scrollContainer = document.querySelector(".gallery");
+    let backbuttn = document.getElementById("backbuttn");
+    let nextbuttn = document.getElementById("nextbuttn");
+
+
+    nextbuttn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior="smooth";
+        scrollContainer.scrollLeft += 1200;
+    });
+    backbuttn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior="smooth";
+        scrollContainer.scrollLeft -= 1200;
+    });
+</script>
+</html>
