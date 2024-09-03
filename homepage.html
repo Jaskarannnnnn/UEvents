@@ -129,7 +129,6 @@ ul.navitem1 li {
     align-items: center;
     justify-content: center;
     margin: 10% auto;
-    margin-left: 50px;
 }
 .backbuttn, .nextbuttn{
     cursor: pointer;
@@ -358,12 +357,12 @@ const app = initializeApp(firebaseConfig);
     
       backButton.addEventListener("click", () => {
         gallery.style.scrollBehavior = "smooth";
-        gallery.scrollLeft -= 1150;
+        gallery.scrollLeft -= 1225;
       });
     
       nextButton.addEventListener("click", () => {
         gallery.style.scrollBehavior = "smooth";
-        gallery.scrollLeft += 1150;
+        gallery.scrollLeft += 1225;
       });
     }
 </script>
