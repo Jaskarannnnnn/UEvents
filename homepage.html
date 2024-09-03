@@ -7,11 +7,96 @@
     
 
 </head>
-<>
     <style>
        
 body {
     background-color: whitesmoke;
+    overflow-x: hidden;
+}
+.searchbar{
+    width: 500px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-color: transparent;
+    outline: transparent;
+}
+.navbar {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    left: -8px;
+    top: -8px;
+    padding: 0 4%;
+    background: rgb(158, 2, 2);
+    z-index: 9;
+    display: flex;
+    align-items: center;
+}
+a.btn-customized {
+    position: relative;
+    padding-right: 94px;
+    color: #f6f2e5;
+    font-size: 30px;
+    top: 3px;
+}
+.subnavbar {
+    position: relative;
+    width: 110%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(127, 2, 2);
+    left: -8px;
+    top: -8px;
+}
+
+.navitem {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: 138px;
+    padding-top: 10px;
+}
+
+ul.navitem li {
+    display: inline;
+}
+
+.navitem li a {
+    display: inline;
+    text-decoration: none;
+    color: #c8c8c3;
+    font-size: 14px;
+    padding: 8px;
+}
+.navitem li a:hover {
+    color: white;
+}
+
+.navitem1 {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    right: 136px;
+    padding-top: 10px;
+}
+
+ul.navitem1 li {
+    display: inline;
+}
+
+.navitem1 li a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+.navitem1 li a:hover {
+    color: white;
 }
 .gallery{
     width:100%;
@@ -52,45 +137,8 @@ body {
     margin: 40px;
 }
 
-
-.nav-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 20px;
-    background-color:rgb(158, 2, 2);
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.nav-bar a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    margin-top: -10px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-left:20px;
-    
-}
-.text {
-    width: 120px;
-    
-}
-
-.text :hover{
-    background-color: rgb(87, 5, 5);
-    transition: 0.3s;
-    border-radius: 5px;
-    cursor: pointer;
-}
 .name{
     text-align: center;
-    margin-left: 80px;
     display: flex;
     position: absolute;
     margin-bottom:600px;
@@ -103,16 +151,14 @@ div{
     display: flex;
     height: 50px;
     width: 50px;
-    background-color: rgb(158, 2, 2);
+    background-color: rgb(127, 2, 2);
     position: absolute;
     cursor: pointer;
     border-radius: 5px;
     transition: 0.4s;
-    z-index: 1;
-    padding: 0px;
-    margin: 0px;
-    margin-top: 40px;
+    z-index: 10;
     font-size: 20px;
+    right: 40px;
     
 }
 #profile:hover{
@@ -138,21 +184,12 @@ span{
     font-size: 20px;
     display: contents;
 }
-.searchbar{
-    margin-left: 300px;
-    background-color: transparent;
-    color: white;
-    height: 30px;
-    width: 400px;
-    border-color: white;
-    border-radius: 100px;
+.navbar img{
+    height: 42px;
+    margin-left: 73px;
+    padding-right: 10px;
 }
-.logo{
-    height: 40px;
-    width: 40px;
-    margin: -10px;
-    
-}
+
 
 </style>
 
@@ -215,16 +252,23 @@ const app = initializeApp(firebaseConfig);
 
     </div>
      
-    <nav class="nav-bar">
-        <img  src="https://i.ibb.co/PFwFYhX/logo.png" class="logo">
-        <div class="text"> <a class ="write" href="#">Home</a></div>
-        <div class="text"> <a class ="write" href="#">Categories</a></div>
-        <div class="text"> <a class ="write" href="#">About Us</a></div>
-        <div class="text"> <a class ="write" href="#">Contact Us</a></div>
-
-        <input  class="searchbar" type="search" placeholder="    Search ">
-       
+    <nav class="navbar">
+        <img src="https://i.ibb.co/PFwFYhX/logo.png">
+        <div><input type="searchbar" class="searchbar" placeholder="  Search on UEvents"></div>
+        <a href="#" class="btn-customized open-menu">
+            <ion-icon name="menu-outline"></ion-icon>
+        </a>
     </nav>
+    <nav class="subnavbar">
+        <ul class='navitem'>
+            <li><a href='#'>Home</a></li>
+            <li><a href='#'>Categories</a></li>
+            <li><a href='#'></a></li>
+            <li><a href='#'>Contact Us</a></li>
+            <li><a href='#'>About Us</a></li>
+        </ul>
+    </nav>
+
     
     <div class="gallerywrap">
         <h1 class="name">Top Events This Week</h1>
@@ -283,7 +327,7 @@ const app = initializeApp(firebaseConfig);
               <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
               <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
               <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
-    
+    d
             </div>
             <div>
                 <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
