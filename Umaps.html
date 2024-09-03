@@ -8,7 +8,9 @@
 
 </head>
     <style>
-       
+ *{
+    font-family:"poppins",sans-serif;
+}     
 body {
     background-color: whitesmoke;
     overflow-x: hidden;
@@ -144,7 +146,7 @@ span{
 #imageZoom{
     width: 700px;
     height: 450px;
-    border:5px solid red;
+    border:5px solid rgb(127, 2, 2);
     position: relative;
     cursor: zoom-in;  
 }
@@ -169,11 +171,39 @@ span{
     position: absolute;
     left: 775px;
     top: 0;
-    border:5px solid red;
+    border:5px solid rgb(127, 2, 2);
     
 }
-
-
+#pin1 img{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 475px;
+    top: 290px;
+    transition: 0.3s;
+    
+}
+#pin1 img:hover{
+    height: 100px;
+    width: 100px;
+    left: 450px;
+    top: 240px;
+}
+#pin2 img{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 225px;
+    top: 460px;
+    transition: 0.3s;
+    
+}
+#pin2 img:hover{
+    height: 100px;
+    width: 100px;
+    left: 200px;
+    top: 410px;
+}
 </style>
 
 <script type="module">
@@ -244,19 +274,26 @@ const app = initializeApp(firebaseConfig);
     </nav>
     <nav class="subnavbar">
         <ul class='navitem'>
-            <li><a href='#'>Home</a></li>
+            <li><a href='homepage.html'>Home</a></li>
             <li><a href='#'>Categories</a></li>
             <li><a href='Umaps.html'>uMaps</a></li>
             <li><a href='#'>Contact Us</a></li>
             <li><a href='#'>About Us</a></li>
         </ul>
     </nav>
+    <h1 style="text-align: center">This Week's Events on uMaps</h1>
     <div id="imageZoom" style="
         --url: url(https://i.ibb.co/4mgmVdh/chitkara-map.png);
         --zoom-x: 0%; --zoom-y: 0%;
         --display: none;
     ">
         <img src="https://i.ibb.co/4mgmVdh/chitkara-map.png" alt="">
+    </div>
+    <div id="pin1">
+        <a href="#"><img src="https://i.ibb.co/WsGSR9x/pins.png"></a>
+    </div>
+    <div id="pin2">
+        <a href="#"><img src="https://i.ibb.co/WsGSR9x/pins.png"></a>
     </div>
 
 
