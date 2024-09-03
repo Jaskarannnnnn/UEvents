@@ -98,6 +98,36 @@ ul.navitem1 li {
 .navitem1 li a:hover {
     color: white;
 }
+.topgallery{
+    width: 1350px;;
+    display: flex;
+    margin-left: 10px;
+    overflow-x: scroll;
+}
+.topgallery div{
+    width: 1100px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 100px;
+    padding: 10px;
+    flex: none;
+    margin-left: 100px;
+}
+.topgallery div img{
+    width: 1350px;
+    height: 400px;
+    transition: 0.5s;
+    
+}
+.topgallery::-webkit-scrollbar{
+    display: none;
+}
+.topgallerywrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:  auto;
+}
 .gallery{
     width:100%;
     display: flex;
@@ -269,28 +299,21 @@ const app = initializeApp(firebaseConfig);
     </nav>
 
     
-    <div class="gallerywrap">
-        <h1 class="name">Top Events This Week</h1>
-        <img src="https://i.ibb.co/GpDqZkt/back.png" class="backbuttn">
-        <div class="gallery">
+    <div class="topgallerywrap">
+        <div class="topgallery">
             <div>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
               <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
-              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
-              <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
     
             </div>
             <div>
-                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span> 
-                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
-                <span><img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"> </span>
+                
       
               </div>
         
         
         </div>
-
-    
-        <img src="https://i.ibb.co/TMLDpF0/next.png" class="nextbuttn">
     </div>
 
     
