@@ -6,11 +6,11 @@
 }
 body{
     background-color: #c9d6ff;
-    background:linear-gradient(to right,#e2e2e2,#c9d6ff);
+    background:linear-gradient(to right,#d41e1e,#840202);
 }
 .recover{
     background-color: white;
-    color: rgb(125,125,235);
+    color: rgb(158, 2, 2);
     size: 1px;
 }
 .container{
@@ -52,7 +52,7 @@ input{
 input:focus{
     background-color: transparent;
     outline:transparent;
-    border-bottom:2px solid hsl(327,90%,28%);
+    border-bottom:2px solid rgb(158, 2, 2);
 }
 input::placeholder{
     color:transparent;
@@ -67,7 +67,7 @@ label{
 }
 input:focus~label,input:not(:placeholder-shown)~label{
     top:-3em;
-    color:hsl(327,90%,28%);
+    color:rgb(158, 2, 2);
     font-size:15px;
 }
 .recover{
@@ -78,10 +78,10 @@ input:focus~label,input:not(:placeholder-shown)~label{
 }
 .recover a{
     text-decoration:none;
-    color:rgb(125,125,235);
+    color:rgb(158, 2, 2);
 }
 .recover a:hover{
-    color:blue;
+    color: rgb(158, 2, 2);
     text-decoration:underline;
 }
 button{
@@ -91,7 +91,7 @@ button{
     outline:none;
     border:none;
     width:100%;
-    background:rgb(125,125,235);
+    background:rgb(158, 2, 2);
     color:white;
     cursor:pointer;
     transition:0.9s;
@@ -108,7 +108,7 @@ button:hover{
     text-align:center;
 }
 .icons i{
-    color:rgb(125,125,235);
+    color:rgb(158, 2, 2);
     padding:0.8rem 1.5rem;
     border-radius:10px;
     font-size:1.5rem;
@@ -120,7 +120,7 @@ button:hover{
 .icons i:hover{
     background:#07001f;
     font-size:1.6rem;
-    border:2px solid rgb(125,125,235);
+    border:2px solid rgb(255, 255, 255);
 }
 .links{
     display:flex;
@@ -130,7 +130,7 @@ button:hover{
     font-weight:bold;
 }
  #signUpButton, #signInButton{
-    color:rgb(125,125,235);
+    color:rgb(158, 2, 2);
     border:none;
     background-color:transparent;
     font-size:1rem;
@@ -138,10 +138,10 @@ button:hover{
 }
 #signUpButton:hover, #signInButton:hover {
     text-decoration:underline;
-    color:blue;
+    color:rgb(126, 0, 0);
 } 
 .messageDiv{
-    background-color:hsl(327,90%,28%);
+    background-color:rgb(158, 2, 2);
     color:white;
     padding:10px 20px;
     margin:10px;

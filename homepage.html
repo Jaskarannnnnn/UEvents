@@ -382,5 +382,35 @@ const app = initializeApp(firebaseConfig);
         gallery.scrollLeft += 1225;
       });
     }
-</script>
+    function autoScrollTopGallery() {
+        const topGallery = document.querySelector('.topgallery');
+        const images = topGallery.querySelectorAll('img');
+        const imageWidth = images[0].clientWidth; 
+        const scrollAmount = imageWidth + 50; 
+        let scrollDirection = 1; 
+  
+        topGallery.style.scrollBehavior = "smooth";
+  
+        function scroll() {
+          topGallery.scrollLeft += scrollAmount * scrollDirection;
+  
+          if (topGallery.scrollLeft >= topGallery.scrollWidth - topGallery.clientWidth) {
+            
+            scrollDirection = -1;
+          } else if (topGallery.scrollLeft <= 0) {
+            
+            scrollDirection = 1;
+          }
+  
+          setTimeout(scroll, 5000); 
+        }
+  
+        scroll(); 
+      }
+  
+      
+  
+      autoScrollTopGallery(); 
+    </script>
+
 </html>
