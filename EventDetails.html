@@ -15,6 +15,7 @@
 body {
     background-color: whitesmoke;
     overflow-x: hidden;
+    
 }
 .searchbar{
     width: 500px;
@@ -224,7 +225,7 @@ const app = initializeApp(firebaseConfig);
             <li><a href='#'>About Us</a></li>
         </ul>
     </nav>
-    <div class="content">
+    <div id="content">
         <div class="poster">
             <img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg">
 
@@ -241,11 +242,42 @@ const app = initializeApp(firebaseConfig);
 
            </div>
 
-           <button class="register"> Click To Register</button>
+           <button id="register"> Click To Register</button>
         </div> 
+        
            
         
 
+    </div>
+    <div id="registerationform">
+        <h2 class="title">Registeration Form</h2>
+        <div class="form">
+            <div style=" margin:10%;">
+                <label for="name">Name:</label>
+                <input type="text" placeholder=" Enter Your Name" class="formtext" id="name">
+                <br>
+                <label for="email">Email ID:</label>
+                <input type="email" placeholder=" Enter Your Email ID" class="formtext" id="email">
+                <br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" placeholder=" Enter Your Phone Number" class="formtext" id="phone">
+            
+            </div>
+            <div style=" margin:10%;">
+                <label for="rollnum">Roll Number:</label>
+                <input type="number" placeholder=" Enter Your Roll Number" class="formtext" id="rollnum">
+                <br>
+                <label for="groupnum">Name:</label>
+                <input type="number" placeholder=" Enter Your Group Number" class="formtext" id="groupnum">
+                <br>
+                <label for="groupnum">Name:</label>
+                <input type="number" placeholder=" Enter Your Group Number" class="formtext" id="groupnum">
+            </div>
+            <button type="submit" id="submit">Submit</button>
+            
+            
+        </div>
+     
     </div>
 
 
@@ -254,19 +286,22 @@ const app = initializeApp(firebaseConfig);
     
 </body>
 <script>
-    let imageZoom = document.getElementById('imageZoom');
-    imageZoom.addEventListener('mousemove', (event) => {
-        imageZoom.style.setProperty('--display', 'block');
-        let pointer = {
-            x:  (event.offsetX * 100) / imageZoom.offsetWidth,
-            y:  (event.offsetY * 100) / imageZoom.offsetHeight
-        }
-        imageZoom.style.setProperty('--zoom-x', pointer.x + '%');
-        imageZoom.style.setProperty('--zoom-y', pointer.y + '%');
-    })
-    imageZoom.addEventListener('mouseout', () => {
-        imageZoom.style.setProperty('--display', 'none');
-    })
+const registerButton = document.getElementById('register');
+const registrationForm = document.getElementById('registerationform');
+const submitbutton = document.getElementById('submit');
+const body = document.getElementById('content');
+
+registerButton.addEventListener('click', () => {
+  registrationForm.style.display = 'flex';
+  body.style.filter = 'blur(5px)';
+  
+});
+submitbutton.addEventListener('click', () => {
+    registrationForm.style.display = 'none';
+    body.style.filter = 'blur(0px)';
+  });
+
+
 </script>
 
 
