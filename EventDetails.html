@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UEvents-Homepage</title>
     <link rel="stylesheet" href="EventDetails.css">
-    
-
 </head>
     <style>
 *{
@@ -151,27 +149,26 @@ span{
 </style>
 
 <script type="module">
-   
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword,onAuthStateChanged, signInWithEmailAndPassword, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-import{getFirestore, getDoc, doc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"
-
+import{getFirestore, getDoc, doc, collection, addDoc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"
+    
 const firebaseConfig = {
-   apiKey: "AIzaSyCT4YKNopYJYG9SRey9HINpFP52QR5rUBU",
-   authDomain: "uevents-bea19.firebaseapp.com",
-   projectId: "uevents-bea19",
-   storageBucket: "uevents-bea19.appspot.com",
-   messagingSenderId: "12703804661",
-   appId: "1:12703804661:web:8d0d79ebbc3718981169bc",
-   measurementId: "G-NFQ826HNE5"
- };
-
-// Initialize Firebase
+    apiKey: "AIzaSyCT4YKNopYJYG9SRey9HINpFP52QR5rUBU",
+    authDomain: "uevents-bea19.firebaseapp.com",
+    projectId: "uevents-bea19",
+    storageBucket: "uevents-bea19.appspot.com",
+    messagingSenderId: "12703804661",
+    appId: "1:12703804661:web:8d0d79ebbc3718981169bc",
+    measurementId: "G-NFQ826HNE5"
+    };
+    
+    // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-    const auth=getAuth();
-  const db=getFirestore();
-
-  onAuthStateChanged(auth, (user)=>{
+const auth=getAuth();
+const db=getFirestore();
+    
+onAuthStateChanged(auth, (user)=>{
     const loggedInUserId=localStorage.getItem('loggedInUserId');
     if(loggedInUserId){
         console.log(user);
@@ -184,7 +181,7 @@ const app = initializeApp(firebaseConfig);
                 document.getElementById('loggedUserEmail').innerText=userData.email;
                 document.getElementById('loggedUserLName').innerText=userData.lastName;
                 document.getElementById('loggedUserphNum').innerText=userData.phNum;
-
+    
             }
             else{
                 console.log("no document found matching id")
@@ -197,7 +194,43 @@ const app = initializeApp(firebaseConfig);
     else{
         console.log("User Id not Found in Local storage")
     }
-  })
+})
+const form = document.getElementById("form");
+ 
+form.addEventListener("submit", (e) => {
+   e.preventDefault();
+ 
+   const name = document.getElementById('name').value;
+   const email = document.getElementById('email').value;
+   const phone = document.getElementById('phone').value;
+   const rollnum = document.getElementById('rollnum').value;
+   const groupnum = document.getElementById('groupnum').value;
+   const year = document.getElementById('year').value;
+ 
+   // Optional: Validate user input before submitting
+ 
+   // Create a reference to the "users" collection in Firestore
+   const event1 = collection(db, "event1");
+ 
+   // Add a new document with user data
+   addDoc(event1, {
+     name,
+     email,
+     phone,
+     rollnum,
+     groupnum,
+     year,
+   })
+     .then(() => {
+       alert("Registration successful!");
+       // Reset form or handle success scenario
+     })
+     .catch((error) => {
+       console.error("Error adding document: ", error);
+     });
+});
+    
+
 </script>
 <body>
     <div id="profile" style="flex-direction: column;">
@@ -251,7 +284,7 @@ const app = initializeApp(firebaseConfig);
     </div>
     <div id="registerationform">
         <h2 class="title">Registeration Form</h2>
-        <div class="form">
+        <form id="form">
             <div style=" margin:10%;">
                 <label for="name">Name:</label>
                 <input type="text" placeholder=" Enter Your Name" class="formtext" id="name">
@@ -267,16 +300,16 @@ const app = initializeApp(firebaseConfig);
                 <label for="rollnum">Roll Number:</label>
                 <input type="number" placeholder=" Enter Your Roll Number" class="formtext" id="rollnum">
                 <br>
-                <label for="groupnum">Name:</label>
+                <label for="groupnum">Group Number:</label>
                 <input type="number" placeholder=" Enter Your Group Number" class="formtext" id="groupnum">
                 <br>
-                <label for="groupnum">Name:</label>
-                <input type="number" placeholder=" Enter Your Group Number" class="formtext" id="groupnum">
+                <label for="year">Year of Study:</label>
+                <input type="number" placeholder=" Year of Study" class="formtext" id="year">
             </div>
             <button type="submit" id="submit">Submit</button>
             
             
-        </div>
+        </form>
      
     </div>
 
@@ -292,16 +325,19 @@ const submitbutton = document.getElementById('submit');
 const body = document.getElementById('content');
 
 registerButton.addEventListener('click', () => {
-  registrationForm.style.display = 'flex';
-  body.style.filter = 'blur(5px)';
-  
-  
-});
-submitbutton.addEventListener('click', () => {
-    registrationForm.style.display = 'none';
-    body.style.filter = 'blur(0px)';
+    registrationForm.style.display = 'flex';
+    body.style.filter = 'blur(5px)';
+    
     
   });
+  submitbutton.addEventListener('click', () => {
+      registrationForm.style.display = 'none';
+      body.style.filter = 'blur(0px)';
+      
+    });
+  
+  const form = document.getElementById('form');
+    
 
 
 </script>
