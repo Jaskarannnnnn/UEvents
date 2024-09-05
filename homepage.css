@@ -1,0 +1,215 @@
+*{
+    font-family:"poppins",sans-serif;
+}    
+body {
+    background-color: whitesmoke;
+    overflow-x: hidden;
+}
+.searchbar{
+    width: 500px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-color: transparent;
+    outline: transparent;
+}
+.navbar {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    left: -8px;
+    top: -8px;
+    padding: 0 4%;
+    background: rgb(158, 2, 2);
+    z-index: 9;
+    display: flex;
+    align-items: center;
+}
+a.btn-customized {
+    position: relative;
+    padding-right: 94px;
+    color: #f6f2e5;
+    font-size: 30px;
+    top: 3px;
+}
+.subnavbar {
+    position: relative;
+    width: 110%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(127, 2, 2);
+    left: -8px;
+    top: -8px;
+}
+
+.navitem {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: 138px;
+    padding-top: 10px;
+}
+
+ul.navitem li {
+    display: inline;
+}
+
+.navitem li a {
+    display: inline;
+    text-decoration: none;
+    color: #c8c8c3;
+    font-size: 14px;
+    padding: 8px;
+}
+.navitem li a:hover {
+    color: white;
+}
+
+.navitem1 {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    right: 136px;
+    padding-top: 10px;
+}
+
+ul.navitem1 li {
+    display: inline;
+}
+
+.navitem1 li a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+.navitem1 li a:hover {
+    color: white;
+}
+.topgallery{
+    width:1350px;
+    display: flex;
+    margin-left: 10px;
+    overflow-x: scroll;
+}
+.topgallery div{
+    width: 1100px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 150px;
+    padding: 10px;
+    flex: none;
+    margin-left: 100px;
+}
+.topgallery div img{
+    width: 1350px;
+    height: 400px;
+    margin-left: -110px;
+
+    
+}
+.topgallery::-webkit-scrollbar{
+    display: none;
+}
+.topgallerywrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:  auto;
+}
+.gallery{
+    width:100%;
+    display: flex;
+    margin-left: px;
+    overflow-x: scroll;
+    
+}
+.gallery div{
+    width: 1100px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    padding: 50px;
+    flex: none;
+}
+.gallery div img{
+    width: 250px;
+    transition: 0.5s;
+    
+}
+.gallery div img:hover{
+    cursor: pointer;
+    transform: scale(1.1)    
+}
+.gallery::-webkit-scrollbar{
+    display: none;
+}
+.gallerywrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+}
+.backbuttn, .nextbuttn{
+    cursor: pointer;
+    width: 50px;
+    margin: 40px;
+}
+
+.name{
+    text-align: center;
+    display: flex;
+    position: absolute;
+    margin-bottom:600px;
+}
+div{
+    font-weight:400;
+    color:rgb(12,11,11);
+}
+#profile{
+    display: flex;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(127, 2, 2);
+    position: absolute;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+    z-index: 10;
+    font-size: 20px;
+    right: 40px;
+    
+}
+#profile:hover{
+   height: 500px;
+   width: 300px;
+   padding: 20px;
+   
+}
+#profile div {
+    display: none;
+    color: white;
+    
+  }
+#profile:hover div{
+    display:contents;
+    color: white;
+    margin: 10px;
+    padding: 30px;
+    flex-direction: column;
+ }
+span{
+    color: white;
+    font-size: 20px;
+    display: contents;
+}
+.navbar img{
+    height: 42px;
+    margin-left: 73px;
+    padding-right: 10px;
+}
+

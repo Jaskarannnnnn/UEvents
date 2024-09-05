@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UEvents-Homepage</title>
+    <link rel="stylesheet" href="EventDetails.css">
     
 
 </head>
     <style>
- *{
+*{
     font-family:"poppins",sans-serif;
 }     
 body {
@@ -143,71 +144,13 @@ span{
     margin-left: 73px;
     padding-right: 10px;
 }
-#imageZoom{
-    width: 700px;
-    height: 450px;
-    border:5px solid rgb(127, 2, 2);
-    position: relative;
-    cursor: zoom-in;  
-}
-#imageZoom img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 0 0;
-    
-    
-    
-}
-#imageZoom::after{
-    display: block;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    background-image: var(--url);
-    background-size: 200%;
-    background-position: var(--zoom-x) var(--zoom-y);
-    position: absolute;
-    left: 775px;
-    top: 0;
-    border:5px solid rgb(127, 2, 2);
-    
-}
-#pin1 img{
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    left: 475px;
-    top: 290px;
-    transition: 0.3s;
-    
-}
-#pin1 img:hover{
-    height: 100px;
-    width: 100px;
-    left: 450px;
-    top: 240px;
-}
-#pin2 img{
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    left: 225px;
-    top: 460px;
-    transition: 0.3s;
-    
-}
-#pin2 img:hover{
-    height: 100px;
-    width: 100px;
-    left: 200px;
-    top: 410px;
-}
+
+
+
 </style>
 
 <script type="module">
-    
+   
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword,onAuthStateChanged, signInWithEmailAndPassword, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import{getFirestore, getDoc, doc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"
@@ -281,19 +224,28 @@ const app = initializeApp(firebaseConfig);
             <li><a href='#'>About Us</a></li>
         </ul>
     </nav>
-    <h1 style="text-align: center">This Week's Events on uMaps</h1>
-    <div id="imageZoom" style="
-        --url: url(https://i.ibb.co/4mgmVdh/chitkara-map.png);
-        --zoom-x: 0%; --zoom-y: 0%;
-        --display: none;
-    ">
-        <img src="https://i.ibb.co/4mgmVdh/chitkara-map.png" alt="">
-    </div>
-    <div id="pin1">
-        <a href="EventDetails.html"><img src="https://i.ibb.co/WsGSR9x/pins.png"></a>
-    </div>
-    <div id="pin2">
-        <a href="EventDetails.html"><img src="https://i.ibb.co/WsGSR9x/pins.png"></a>
+    <div class="content">
+        <div class="poster">
+            <img src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg">
+
+        </div>
+        <div class="details">
+           <div class="eventtitle">
+               <h2>Cyber Security: Safeguarding Against Cyber Attack</h2>
+           </div>
+           <div class="description">
+               <h3> About this Event</h2>
+               <p>The Google Developer Student Clubs, in collaboration with the Department of Computer Science and Engineering at CUIET, presents an enriching session titled "Cyber Security: Safeguarding against Cyber Attack" on April 18, 2024, at 1:30 p.m. in Pierre Hall, Chitkara University, Rajpura, Punjab. This session aims to provide practical insights into cybersecurity measures and strategies to mitigate cyber attacks. Our distinguished speaker, Tarun Malhotra, Cyber Security, Compliance Consultant & Auditor, Founder & MD Cyber Cops, will share his expertise and experiences to guide the students towards success in these domains. 
+
+                <br><br>NOTE : THIS SESSION IS ONLY FOR CHITKARA UNIVERSITY STUDENTS.</p>
+
+           </div>
+
+           <button class="register"> Click To Register</button>
+        </div> 
+           
+        
+
     </div>
 
 

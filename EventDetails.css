@@ -1,0 +1,62 @@
+.content{
+    display: flex;
+    flex-direction: row;
+}.poster img{
+    display: block;
+    text-align: left;
+    height: 80%;
+    width: 50%;
+    margin:4%;
+    margin-left: 20%;
+    border-radius: 2%;
+    
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(227, 227, 227);
+    height: 66.5%;
+    width: 55%;
+    position: absolute;
+    right: 1%;
+    margin: 2%;
+    padding: 2%;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+
+}
+.eventtitle{
+    width: 100%;
+    height: 10%;
+    font-size: 18px;
+}
+.description{
+    
+    width: 100%;
+    height: 60%;
+    overflow-y: scroll;
+    margin: 2.50%;
+    margin-top: 5.5%;
+    font-size: 15px;
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+
+}
+.register{
+    height: 7%;
+    width: 60%;
+    
+    color: white;
+    background-color: rgb(158, 2, 2);
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.register:hover{
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    
+}
