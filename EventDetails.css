@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     filter: blur(0px);
+    
 
 }.poster img{
     display: block;
