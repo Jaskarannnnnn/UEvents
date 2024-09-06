@@ -70,7 +70,6 @@
     flex-direction: column;
     height: 60%;
     width: 80%;
-    margin: 3%;
     margin-left: 10%;
     align-items: center;
     text-align: center;
@@ -79,6 +78,7 @@
     border-radius: 20px;
     z-index: 1;
     top:100px;
+    flex-direction: column;
 
 }
 .title{
@@ -87,32 +87,12 @@
     text-align: center;
     margin: 5%;
 }
-.form{
-    display: flex;
-    flex-direction: row;
-    height: 60%;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding: 1%;
-    transform: scale(1.2);
-    
-}
-label{
-    position: absolute;
-    font-size: 20px;
-    margin-left: -150px;
-    margin-top: 15px;
-    width: auto;
-}
 .formtext{
-    margin: 11%;
+    margin: 2%;
     height: 20px;
     width: 100%;
     border: 1px solid black;
     border-radius: 1px;
-    color: white;
+    color: black;
 }
+

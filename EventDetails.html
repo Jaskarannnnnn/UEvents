@@ -195,9 +195,9 @@ onAuthStateChanged(auth, (user)=>{
         console.log("User Id not Found in Local storage")
     }
 })
-const form = document.getElementById("form");
+const forms = document.getElementById("form");
  
-form.addEventListener("submit", (e) => {
+forms.addEventListener("submit", (e) => {
    e.preventDefault();
  
    const name = document.getElementById('name').value;
@@ -207,12 +207,12 @@ form.addEventListener("submit", (e) => {
    const groupnum = document.getElementById('groupnum').value;
    const year = document.getElementById('year').value;
  
-   // Optional: Validate user input before submitting
+  
  
-   // Create a reference to the "users" collection in Firestore
+   
    const event1 = collection(db, "event1");
  
-   // Add a new document with user data
+   
    addDoc(event1, {
      name,
      email,
@@ -222,8 +222,8 @@ form.addEventListener("submit", (e) => {
      year,
    })
      .then(() => {
-       alert("Registration successful!");
-       // Reset form or handle success scenario
+       alert("Registration successful!!!");
+       forms.reset();
      })
      .catch((error) => {
        console.error("Error adding document: ", error);
@@ -285,7 +285,7 @@ form.addEventListener("submit", (e) => {
     <div id="registerationform">
         <h2 class="title">Registeration Form</h2>
         <form id="form">
-            <div style=" margin:10%;">
+            <div>
                 <label for="name">Name:</label>
                 <input type="text" placeholder=" Enter Your Name" class="formtext" id="name">
                 <br>
@@ -294,9 +294,6 @@ form.addEventListener("submit", (e) => {
                 <br>
                 <label for="phone">Phone Number:</label>
                 <input type="tel" placeholder=" Enter Your Phone Number" class="formtext" id="phone">
-            
-            </div>
-            <div style=" margin:10%;">
                 <label for="rollnum">Roll Number:</label>
                 <input type="number" placeholder=" Enter Your Roll Number" class="formtext" id="rollnum">
                 <br>
@@ -305,12 +302,12 @@ form.addEventListener("submit", (e) => {
                 <br>
                 <label for="year">Year of Study:</label>
                 <input type="number" placeholder=" Year of Study" class="formtext" id="year">
+            
             </div>
             <button type="submit" id="submit">Submit</button>
             
-            
         </form>
-     
+        <button id="cross">X</button>
     </div>
 
 
@@ -323,6 +320,7 @@ const registerButton = document.getElementById('register');
 const registrationForm = document.getElementById('registerationform');
 const submitbutton = document.getElementById('submit');
 const body = document.getElementById('content');
+const cross = document.getElementById('cross');
 
 registerButton.addEventListener('click', () => {
     registrationForm.style.display = 'flex';
@@ -334,6 +332,11 @@ registerButton.addEventListener('click', () => {
       registrationForm.style.display = 'none';
       body.style.filter = 'blur(0px)';
       
+    });
+
+   cross.addEventListener('click', (event) => {
+        registrationForm.style.display = 'none';
+        body.style.filter = 'blur(0px)';
     });
   
   const form = document.getElementById('form');
