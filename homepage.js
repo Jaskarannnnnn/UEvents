@@ -9,12 +9,12 @@ for (let i = 0; i < galleries.length; i++) {
     
       backButton.addEventListener("click", () => {
         gallery.style.scrollBehavior = "smooth";
-        gallery.scrollLeft -= 1300;
+        gallery.scrollLeft -= 1200;
       });
     
       nextButton.addEventListener("click", () => {
         gallery.style.scrollBehavior = "smooth";
-        gallery.scrollLeft += 1300;
+        gallery.scrollLeft += 1200;
       });
     }
     function autoScrollTopGallery() {
