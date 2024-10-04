@@ -375,6 +375,21 @@ const app = initializeApp(firebaseConfig);
     }
   })
 </script>
+<style>
+    .chatbot-iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;   
+    }
+</style>
+    
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/@denserai/embed-chat@1/dist/web.min.js";
+    Chatbot.init({
+    chatbotId: "f7e9b94b-f2aa-46d5-9614-8fc762063821",
+    });
+</script>
 <body>
     <div id="profile" style="flex-direction: column;">
       <img src="https://i.ibb.co/qDmGjxK/profile-circle-icon-2048x2048-cqe5466q.png">
