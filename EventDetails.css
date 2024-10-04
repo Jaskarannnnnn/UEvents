@@ -65,6 +65,7 @@
     
 }
 #registerationform{
+    
     display: none;
     position: absolute;
     flex-direction: column;
