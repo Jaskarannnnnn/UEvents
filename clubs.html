@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEvents-Homepage</title>
+    <link rel="stylesheet" href="EventDetails.css">
+<script>
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+          const productContainers = [...document.querySelectorAll('.product-container')];
+          const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+          const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+          productContainers.forEach((item, i) => {
+              let containerWidth = item.getBoundingClientRect().width;
+
+              nxtBtn[i].addEventListener('click', () => {
+                  item.scrollLeft += containerWidth;
+              });
+
+              preBtn[i].addEventListener('click', () => {
+                  item.scrollLeft -= containerWidth;
+              });
+          });
+      });
+
+
+</script>
+</head>
+    <style>
+*{
+    font-family:"poppins",sans-serif;
+}     
+body {
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    
+}
+.searchbar{
+    width: 500px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-color: transparent;
+    outline: transparent;
+}
+.navbar {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    left: -8px;
+    top: -8px;
+    padding: 0 4%;
+    background: rgb(158, 2, 2);
+    z-index: 9;
+    display: flex;
+    align-items: center;
+}
+a.btn-customized {
+    position: relative;
+    padding-right: 94px;
+    color: #f6f2e5;
+    font-size: 30px;
+    top: 3px;
+}
+.subnavbar {
+    position: relative;
+    width: 110%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(127, 2, 2);
+    left: -8px;
+    top: -8px;
+}
+
+.navitem {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: 138px;
+    padding-top: 10px;
+}
+
+ul.navitem li {
+    display: inline;
+}
+
+.navitem li a {
+    display: inline;
+    text-decoration: none;
+    color: #c8c8c3;
+    font-size: 14px;
+    padding: 8px;
+}
+.navitem li a:hover {
+    color: white;
+}
+
+.navitem1 {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    right: 136px;
+    padding-top: 10px;
+}
+
+ul.navitem1 li {
+    display: inline;
+}
+
+.navitem1 li a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+.navitem1 li a:hover {
+    color: white;
+}
+#profile{
+    display: flex;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(127, 2, 2);
+    position: absolute;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+    z-index: 10;
+    font-size: 20px;
+    right: 40px;
+    
+}
+#profile:hover{
+   height: 500px;
+   width: 300px;
+   padding: 20px;
+   
+}
+#profile div {
+    display: none;
+    color: white;
+    
+  }
+#profile:hover div{
+    display:contents;
+    color: white;
+    margin: 10px;
+    padding: 30px;
+    flex-direction: column;
+ }
+span{
+    color: white;
+    font-size: 20px;
+    display: contents;
+}
+
+.navbar img{
+    height: 42px;
+    margin-left: 73px;
+    padding-right: 10px;
+}
+    .cn-cuiet,
+        .gdsc {
+            margin-top: 20px;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+        }
+        .product {
+            position: relative;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .product-category {
+            padding: 0 10vw;
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            text-transform: capitalize;
+            margin-left: 370px;
+        }
+        .product-container {
+            padding: 20px 20px 18px 20px;
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            background-color: rgb(172, 172, 172);
+            width: 900px;
+            margin-left: 100px;
+        }
+        .product-container::-webkit-scrollbar {
+            display: none;
+        }
+        .product-card {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .product-image {
+            position: relative;
+            width: 130px;
+            height: 190px;
+            overflow: hidden;
+        }
+        .product-thumb {
+            width: 100%;
+            height: 100%;
+        }
+        .brand-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .product-card:hover .brand-overlay {
+            opacity: 1;
+        }
+        .card-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            width: 90%;
+            text-transform: capitalize;
+            border: none;
+            outline: none;
+            background: #fff;
+            border-radius: 5px;
+            transition: 0.5s;
+            cursor: pointer;
+            opacity: 0;
+        }
+         .product-card:hover .card-btn {
+            opacity: 1;
+        } 
+        /* .card-btn:hover {
+            color: #fff;
+        } */
+        /* .product-info {
+            width: 100%;
+            height: 100px;
+            padding-top: 10px;
+        } */
+        .product-brand {
+            text-transform: uppercase;
+        }
+        .product-short-description {
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            overflow: hidden;
+            opacity: 0.5;
+            text-transform: capitalize;
+            margin: 5px 0;
+        }
+        .pre-btn,
+        .nxt-btn {
+            border: none;
+            position: absolute;
+            background: transparent;
+            cursor: pointer;
+        }
+        .pre-btn {
+            z-index: 1;
+            margin-top: 65px;
+            left: 250px;
+        }
+        .nxt-btn {
+            margin-top: 65px;
+            right: 5px;
+        }
+        .products {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(172, 172, 172);
+        }
+
+        .chatbot-iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+        border-radius: 10px;   
+        }
+
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+  
+.wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/H4HyKg0/undefined-Imgur.png");
+    background-size: 1000px 100px;
+}
+  
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+}
+  
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+}
+  
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+}
+  
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+}
+  
+@keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+}
+    100% {
+      background-position-x: 0px;
+    }
+}
+  
+@keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-position-x: 0px;
+    }
+}
+
+
+
+</style>
+    
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/@denserai/embed-chat@1/dist/web.min.js";
+    Chatbot.init({
+    chatbotId: "f7e9b94b-f2aa-46d5-9614-8fc762063821",
+    });
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import {getAuth, createUserWithEmailAndPassword,onAuthStateChanged, signInWithEmailAndPassword, sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import{getFirestore, getDoc, doc, collection, addDoc} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"
+    
+const firebaseConfig = {
+    apiKey: "AIzaSyCT4YKNopYJYG9SRey9HINpFP52QR5rUBU",
+    authDomain: "uevents-bea19.firebaseapp.com",
+    projectId: "uevents-bea19",
+    storageBucket: "uevents-bea19.appspot.com",
+    messagingSenderId: "12703804661",
+    appId: "1:12703804661:web:8d0d79ebbc3718981169bc",
+    measurementId: "G-NFQ826HNE5"
+    };
+    
+    // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth=getAuth();
+const db=getFirestore();
+    
+onAuthStateChanged(auth, (user)=>{
+    const loggedInUserId=localStorage.getItem('loggedInUserId');
+    if(loggedInUserId){
+        console.log(user);
+        const docRef = doc(db, "users", loggedInUserId);
+        getDoc(docRef)
+        .then((docSnap)=>{
+            if(docSnap.exists()){
+                const userData=docSnap.data();
+                document.getElementById('loggedUserFName').innerText=userData.firstName;
+                document.getElementById('loggedUserEmail').innerText=userData.email;
+                document.getElementById('loggedUserLName').innerText=userData.lastName;
+                document.getElementById('loggedUserphNum').innerText=userData.phNum;
+    
+            }
+            else{
+                console.log("no document found matching id")
+            }
+        })
+        .catch((error)=>{
+            console.log("Error getting document");
+        })
+    }
+    else{
+        console.log("User Id not Found in Local storage")
+    }
+})
+const forms = document.getElementById("form");
+ 
+forms.addEventListener("submit", (e) => {
+   e.preventDefault();
+ 
+   const name = document.getElementById('name').value;
+   const email = document.getElementById('email').value;
+   const phone = document.getElementById('phone').value;
+   const rollnum = document.getElementById('rollnum').value;
+   const groupnum = document.getElementById('groupnum').value;
+   const year = document.getElementById('year').value;
+ 
+  
+ 
+   
+   const event1 = collection(db, "event1");
+ 
+   
+   addDoc(event1, {
+     name,
+     email,
+     phone,
+     rollnum,
+     groupnum,
+     year,
+   })
+     .then(() => {
+       alert("Registration successful!!!");
+       forms.reset();
+     })
+     .catch((error) => {
+       console.error("Error adding document: ", error);
+     });
+});
+    
+
+const registerButton = document.getElementById('register');
+const registrationForm = document.getElementById('registerationform');
+const submitbutton = document.getElementById('submit');
+const body = document.getElementById('content');
+const cross = document.getElementById('cross');
+
+registerButton.addEventListener('click', () => {
+    registrationForm.style.display = 'flex';
+    body.style.filter = 'blur(5px)';
+    
+    
+  });
+  submitbutton.addEventListener('click', () => {
+      registrationForm.style.display = 'none';
+      body.style.filter = 'blur(0px)';
+      
+    });
+
+   cross.addEventListener('click', (event) => {
+        registrationForm.style.display = 'none';
+        body.style.filter = 'blur(0px)';
+    });
+  
+  const form = document.getElementById('form');
+  
+//   Slider JS
+</script>
+
+<body>
+    <div id="profile" style="flex-direction: column;">
+      <img src="https://i.ibb.co/qDmGjxK/profile-circle-icon-2048x2048-cqe5466q.png">
+      <div>First Name: <span id="loggedUserFName"></span></div><br>
+      <div>Last Name: <span id="loggedUserLName"></span></div><br>
+      <div>Email: <span id="loggedUserEmail"></span></div><br>
+      <div>Phone Num: <span id="loggedUserphNum"></span></div><br>
+
+    </div>
+     
+    <nav class="navbar">
+        <img src="https://i.ibb.co/PFwFYhX/logo.png">
+        <div><input type="searchbar" class="searchbar" placeholder="  Search on UEvents"></div>
+        <a href="#" class="btn-customized open-menu">
+            <ion-icon name="menu-outline"></ion-icon>
+        </a>
+    </nav>
+    <nav class="subnavbar">
+        <ul class='navitem'>
+            <li><a href='homepage.html'>Home</a></li>
+            <li><a href='categories.html'>Categories</a></li>
+            <li><a href='Umaps.html'>uMaps</a></li>
+            <li><a href='clubs.html'>Clubs</a></li>
+            <li><a href='slider.html'>Ongoing Events</a></li>
+            <li><a href='#'>Contact Us</a></li>
+            <li><a href='#'>About Us</a></li>
+        </ul>
+    </nav>
+    
+    <section class="product">
+        <h2 class="product-category">Recommended Clubs</h2>
+      </section>
+      
+      <div class="products">
+        <a href="page.html">
+          <img src="c:\Users\HP\Downloads\gdsc-project.png" alt="" class="cn-cuiet" />
+        </a>
+        <button class="pre-btn">
+          <img src="https://i.ibb.co/GpDqZkt/back.png" alt="" />
+        </button>
+        <div class="product-container">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event1</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event2</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event3</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event4</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event5</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event6</button>
+            </div>
+           
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event7</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event8</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event9</button>
+            </div>
+           
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event10</button>
+            </div>
+           
+          </div>
+        </div>
+        <button class="nxt-btn">
+          <img src="https://i.ibb.co/TMLDpF0/next.png" alt="" />
+        </button>
+      </div>
+      <br /><br /><br />
+      <br /><br />
+      <br />
+  
+      <!--second card gallery-->
+  
+      <section class="product"></section>
+     
+      <div class="products">
+          <img src="c:\Users\HP\Downloads\cn-cuiet-project.jpeg" alt="" class="gdsc">
+        <button class="pre-btn">
+          <img src="https://i.ibb.co/GpDqZkt/back.png" alt="" />
+        </button>
+        <div class="product-container">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event1</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event2</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event3</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event4</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event5</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event6</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event7</button>
+            </div>
+           
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event8</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event9</button>
+            </div>
+            
+          </div>
+  
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg"
+                class="product-thumb"
+                alt=""
+              />
+              <button class="card-btn">Event10</button>
+            </div>
+            
+          </div>
+        </div>
+        <button class="nxt-btn">
+          <img src="https://i.ibb.co/TMLDpF0/next.png" alt="" />
+        </button>
+      </div>
+
+<footer class="footer" >
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    
+    <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="Homepage.html">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About us</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact us</a></li>
+    </ul>
+</footer>
+</body>
+</html>

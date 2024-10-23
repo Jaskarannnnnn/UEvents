@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories Page</title>
+    <link rel="stylesheet" href="categories.css">
+</head>
+<body>
+    <div id="profile" style="flex-direction: column;">
+        <img src="https://i.ibb.co/qDmGjxK/profile-circle-icon-2048x2048-cqe5466q.png">
+        <div>First Name: <span id="loggedUserFName"></span></div><br>
+        <div>Last Name: <span id="loggedUserLName"></span></div><br>
+        <div>Email: <span id="loggedUserEmail"></span></div><br>
+        <div>Phone Num: <span id="loggedUserphNum"></span></div><br>
+    </div>
+
+    <nav class="navbar">
+        <img src="https://i.ibb.co/PFwFYhX/logo.png">
+        <div><input type="searchbar" class="searchbar" placeholder="  Search on UEvents"></div>
+        <a href="#" class="btn-customized open-menu">
+            <ion-icon name="menu-outline"></ion-icon>
+        </a>
+    </nav>
+    
+    <nav class="subnavbar">
+        <ul class='navitem'>
+            <li><a href='homepage.html'>Home</a></li>
+            <li><a href='#'>Categories</a></li>
+            <li><a href='Umaps.html'>uMaps</a></li>
+            <li><a href='clubs.html'>Clubs</a></li>
+            <li><a href='slider.html'>Ongoing Events</a></li>
+            <li><a href='#'>Contact Us</a></li>
+            <li><a href='#'>About Us</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="heading">Categories</h1>
+    <div class="container">
+        <div class="category tech" onclick="showPopup('technical')">
+            <h2 class="words">Tech</h2>
+        </div>
+        
+        <div class="category non-tech" onclick="showPopup('non-technical')">
+            <h2 class="words">Non-Tech</h2>
+        </div>
+    </div>
+    
+    <div class="tags">
+        <h2 class="tag1">Technical Events</h2>
+        <h2 class="tag2">Non-Technical Events</h2>
+    </div>
+
+    <div id="popup" class="popup" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation();">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="flex popup-images"></div>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(type) {
+            const popup = document.getElementById("popup");
+            const popupImages = document.querySelector('.popup-images');
+            popupImages.innerHTML = ''; // Clear previous images
+
+            const images = type === 'technical' ? [
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg',
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg',
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg',
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg'
+            ] : [
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg',
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg',
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg',
+                'https://i.ibb.co/SXWxRF7/Whats-App-Image-2024-08-03-at-1-52-43-AM.jpg'
+            ];
+
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'image1';
+                popupImages.appendChild(img);
+            });
+
+            popup.style.display = "flex"; // Show the popup
+        }
+
+        function closePopup() {
+            const popup = document.getElementById("popup");
+            popup.style.display = "none"; // Hide the popup
+        }
+    </script>
+</body>
+</html>
