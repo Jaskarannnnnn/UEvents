@@ -1,0 +1,124 @@
+#content{
+    display: flex;
+    flex-direction: row;
+    filter: blur(0px);
+    
+
+}.poster img{
+    display: block;
+    text-align: left;
+    height: 80%;
+    width: 50%;
+    margin:4%;
+    margin-left: 20%;
+    border-radius: 2%;
+    
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(227, 227, 227);
+    height: 66.5%;
+    width: 55%;
+    position: absolute;
+    right: 1%;
+    margin: 2%;
+    padding: 2%;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+
+}
+.eventtitle{
+    width: 100%;
+    height: 10%;
+    font-size: 18px;
+}
+.description{
+    
+    width: 100%;
+    height: 60%;
+    overflow-y: scroll;
+    margin: 2.50%;
+    margin-top: 5.5%;
+    font-size: 15px;
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+
+}
+#register{
+    height: 7%;
+    width: 60%;
+    
+    color: white;
+    background-color: rgb(158, 2, 2);
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+#register:hover{
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    font-size: 15px;
+    
+}
+#registerationform{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    height: 90%;
+    width: 50%;
+    margin-left: 25%;
+    align-items: center;
+    background-color: rgb(223, 221, 221);
+    border-radius: 20px;
+    z-index: 1;
+    top:100px;
+    flex-direction: column;
+}
+
+
+.title{
+    height: 5%;
+    width: 80%;
+    text-align: center;
+    margin: 5%;
+}
+.formtext{
+    margin: 2%;
+    height: 20px;
+    width: 100%;
+    border: 1px solid rgb(116, 40, 40);
+    border-radius: 1px;
+    color: black;
+    
+}
+
+#cross {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0px;
+    font-size:15px;
+}
+
+
+#cross:hover{
+    background-color: #ef233c;
+     color: white; 
+    padding: 5px;
+}
+#submit{
+    padding: 13px;
+    margin-top: 10px;
+    margin-left: 270px;
+}
+
+.name1, .id1, .phone1, .roll1, .group1, .year1 {
+    margin-left: 10px;
+} 
