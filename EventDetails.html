@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UEvents-Homepage</title>
-    <link rel="stylesheet" href="EventDetails.css">
+    <link rel="stylesheet" href="EventDetails (1).css">
 </head>
     <style>
 *{
@@ -147,21 +147,6 @@ span{
 
 
 </style>
-<style>
-    .chatbot-iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-    border-radius: 10px;   
-    }
-</style>
-    
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/@denserai/embed-chat@1/dist/web.min.js";
-    Chatbot.init({
-    chatbotId: "f7e9b94b-f2aa-46d5-9614-8fc762063821",
-    });
-</script>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
@@ -267,10 +252,8 @@ forms.addEventListener("submit", (e) => {
     <nav class="subnavbar">
         <ul class='navitem'>
             <li><a href='homepage.html'>Home</a></li>
-            <li><a href='categories.html'>Categories</a></li>
+            <li><a href='#'>Categories</a></li>
             <li><a href='Umaps.html'>uMaps</a></li>
-            <li><a href='clubs.html'>Clubs</a></li>
-            <li><a href='slider.html'>Ongoing Events</a></li>
             <li><a href='#'>Contact Us</a></li>
             <li><a href='#'>About Us</a></li>
         </ul>
@@ -303,21 +286,21 @@ forms.addEventListener("submit", (e) => {
         <h2 class="title">Registeration Form</h2>
         <form id="form">
             <div>
-                <label for="name">Name:</label>
+                <label for="name" class="name1">Name:</label>
                 <input type="text" placeholder=" Enter Your Name" class="formtext" id="name">
                 <br>
-                <label for="email">Email ID:</label>
+                <label for="email" class="id1">Email ID:</label>
                 <input type="email" placeholder=" Enter Your Email ID" class="formtext" id="email">
                 <br>
-                <label for="phone">Phone Number:</label>
+                <label for="phone" class="phone1">Phone Number:</label>
                 <input type="tel" placeholder=" Enter Your Phone Number" class="formtext" id="phone">
-                <label for="rollnum">Roll Number:</label>
+                <label for="rollnum" class="roll1">Roll Number:</label>
                 <input type="number" placeholder=" Enter Your Roll Number" class="formtext" id="rollnum">
                 <br>
-                <label for="groupnum">Group Number:</label>
+                <label for="groupnum" class=group1>Group Number:</label>
                 <input type="number" placeholder=" Enter Your Group Number" class="formtext" id="groupnum">
                 <br>
-                <label for="year">Year of Study:</label>
+                <label for="year" class="year1">Year of Study:</label>
                 <input type="number" placeholder=" Year of Study" class="formtext" id="year">
             
             </div>
@@ -327,22 +310,6 @@ forms.addEventListener("submit", (e) => {
         <button id="cross">X</button>
     </div>
 
-<footer class="footer" >
-    <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
-    </div>
-    
-    <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="Homepage.html">Home</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">About us</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Contact us</a></li>
-    </ul>
-    
-    
-</footer>
 
 
     

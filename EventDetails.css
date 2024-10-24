@@ -65,23 +65,21 @@
     
 }
 #registerationform{
-    
     display: none;
     position: absolute;
     flex-direction: column;
-    height: 60%;
-    width: 80%;
-    margin-left: 10%;
+    height: 90%;
+    width: 50%;
+    margin-left: 25%;
     align-items: center;
-    text-align: center;
-    background-color: rgb(196, 196, 196);
-   
+    background-color: rgb(223, 221, 221);
     border-radius: 20px;
     z-index: 1;
     top:100px;
     flex-direction: column;
-
 }
+
+
 .title{
     height: 5%;
     width: 80%;
@@ -92,128 +90,35 @@
     margin: 2%;
     height: 20px;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid rgb(116, 40, 40);
     border-radius: 1px;
     color: black;
-}
-.footer {
-    position: relative;
-    background: rgb(158, 2, 2);
-    min-height: 50px;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: -8px;
-    margin-top: 20%;
     
 }
-  
-.social-icon,
-.menu {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-}
-  
-.social-icon__item,
-.menu__item {
-    list-style: none;
-}
-  
-.social-icon__link {
-    font-size: 2rem;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
-}
-.social-icon__link:hover {
-    transform: translateY(-10px);
-}
-  
-.menu__link {
-    font-size: 1.2rem;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
-    text-decoration: none;
-    opacity: 0.75;
-    font-weight: 300;
-}
-.menu__link:hover{
-      color: white;
-}
-  
-.menu__link:hover {
-    opacity: 1;
-}
-  
-.footer p {
-    color: #fff;
-    margin: 15px 0 10px 0;
-    font-size: 1rem;
-    font-weight: 300;
-}
-  
-.wave {
+
+#cross {
     position: absolute;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("https://i.ibb.co/H4HyKg0/undefined-Imgur.png");
-    background-size: 1000px 100px;
-}
-  
-.wave#wave1 {
-    z-index: 1000;
-    opacity: 1;
-    bottom: 0;
-    animation: animateWaves 4s linear infinite;
-}
-  
-.wave#wave2 {
-    z-index: 999;
-    opacity: 0.5;
-    bottom: 10px;
-    animation: animate 4s linear infinite !important;
-}
-  
-.wave#wave3 {
-    z-index: 1000;
-    opacity: 0.2;
-    bottom: 15px;
-    animation: animateWaves 3s linear infinite;
-}
-  
-.wave#wave4 {
-    z-index: 999;
-    opacity: 0.7;
-    bottom: 20px;
-    animation: animate 3s linear infinite;
-}
-  
-@keyframes animateWaves {
-    0% {
-      background-position-x: 1000px;
-}
-    100% {
-      background-positon-x: 0px;
-    }
-}
-  
-@keyframes animate {
-    0% {
-      background-position-x: -1000px;
-    }
-    100% {
-      background-positon-x: 0px;
-    }
+    top: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0px;
+    font-size:15px;
 }
 
+
+#cross:hover{
+    background-color: #ef233c;
+     color: white; 
+    padding: 5px;
+}
+#submit{
+    padding: 13px;
+    margin-top: 10px;
+    margin-left: 270px;
+}
+
+.name1, .id1, .phone1, .roll1, .group1, .year1 {
+    margin-left: 10px;
+} 
