@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ga+Maamli&family=Grey+Qo&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Matemasie&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+BE+VLG:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&family=Satisfy&family=Sevillana&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ga+Maamli&family=Grey+Qo&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+BE+VLG:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&family=Satisfy&family=Sevillana&family=Yellowtail&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  /* font-family: "Montserrat Alternates", serif; */
+}
+#animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  margin-top: 2rem;
+  font-family: "Cormorant", serif;
+  margin-left: 43rem;
+  height: 50px;
+  width: 150px;
+  padding: 0px 10px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 80px;
+  font-weight: 600;
+  color: #02122b;
+  box-shadow: 0 0 0 2px #02122b;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #83aaf2;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#animated-button .arr-1 {
+  right: 16px;
+}
+
+#animated-button .arr-2 {
+  left: -25%;
+}
+
+#animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #83aaf2;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#animated-button .text {
+  position: relative;
+  z-index: 1;
+  font-family: "Cormorant", serif;
+
+  transform: translateX(-5px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+#animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+#animated-button:hover .arr-2 {
+  color: #02122b;
+  left: 2px;
+}
+
+#animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+#animated-button:hover svg {
+  fill: #83aaf2;
+}
+
+#animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #83aaf2;
+}
+
+#animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+.caption1 {
+  margin-left: 18rem;
+}
+
+.container {
+  background-image: url("https://i.ibb.co/L5drCYb/white.jpg");
+  min-height: 800px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+.girlies {
+  justify-content: center;
+  align-items: center;
+  margin-left: 400px;
+  margin-top: 200px;
+  font-size: 130px;
+  color: rgb(127, 2, 2);
+
+  border-radius: 10px;
+  font-weight: 300;
+}
+
+.back {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: rgb(127, 2, 2);
+}
+
+.heading {
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+  /* font-family: "Dancing Script", cursive; */
+  padding-top: 5px;
+}
+
+.intro {
+  font-family: "Cormorant", serif;
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 18px;
+  font-family: 300;
+  color:#fdf0d5;
+  padding: 30px;
+  padding-bottom: 60px;
+  text-align: center;
+  background-color: rgb(127, 2, 2);
+}
+
+.container2 {
+  background-image: url("https://i.ibb.co/gmmdrBD/silk.jpg");
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.quote {
+  text-align: center;
+  justify-items: center;
+  margin: 0 auto;
+  padding: 40px;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(127, 2, 2);
+  /* font-family: "Dancing Script", cursive; */
+  font-size: 30px;
+}
+
+.social-links {
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(127, 2, 2);
+}
+
+.link {
+  color:white;
+  padding: 50px;
+}
+
+.link:hover {
+  color: #ffffff56;
+}
+
+.container3 {
+  background-image: url("/backgrounds/maal.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  /* opacity: 0.8; */
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.founders {
+    display: flex;
+    justify-content: center; /* Center the founders horizontally */
+    gap: 80px; /* Space between each founder */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+}
+
+.founder {
+    text-align: center; /* Center text within each founder container */
+}
+
+.founder img {
+    border-radius: 50%; /* Make images round */
+    height: 200px; /* Keep the same height */
+    width: 180px; /* Keep the same width */
+    margin-top: -20px; /* Move images upwards if needed */
+}
+
+.name {
+    font-weight: bold; /* Make the name bold */
+    margin: 10px 0 5px; /* Add some margin for spacing */
+}
+
+.designation {
+    color: #666; /* Change color for designation for better visibility */
+    margin: 0; /* Remove margin for designation */
+}
+.caption {
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Cormorant", serif;
+  /* font-family: "Grey Qo", cursive; */
+  color:white;
+  text-align: center;
+   padding-top: 6rem;
+  justify-items: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 915px) {
+  .container {
+    background-image: url("/backgrounds/e1.jpg");
+    min-height: 700px;
+  }
+  .girlies {
+    display: none;
+  }
+  .back {
+    color: white;
+    margin-left: 10px;
+  }
+
+  .heading {
+    margin-top: -20px;
+  }
+  .intro {
+    font-size: 12px;
+    padding: 15px;
+  }
+  .container2 {
+    background-image: url("https://i.ibb.co/pJzNT1t/fest.jpg");
+  }
+  .quote {
+    font-size: 15px;
+    font-weight: 200;
+    padding: 20px;
+  }
+  .container3 {
+    background-image: url("/backgrounds/e3.jpg");
+    opacity: 1;
+  }
+  .caption {
+    font-size: 25px;
+  }
+
+  .caption1 {
+    margin-left: 5rem;
+  }
+  .social-links {
+    padding: 10px;
+  }
+  .link {
+    padding: 30px;
+  }
+}
